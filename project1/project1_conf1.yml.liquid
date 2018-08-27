@@ -1,0 +1,11 @@
+{% include 'commons/in_bigquery' %}
+  # 実際には何らかの集計クエリ
+  sql: SELECT * FROM {{ env.INPUT_TABLE_NAME }}
+
+{% include 'commons/out_bigquery' %}
+  dataset: {{ env.OUTPUT_DATASET_NAME }}
+  table: {{ env.OUTPUT_TABLE_NAME }}
+  auto_create_table: true
+
+  mode: replace
+  prevent_duplicate_insert: true

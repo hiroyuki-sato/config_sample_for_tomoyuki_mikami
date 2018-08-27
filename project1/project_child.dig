@@ -1,0 +1,19 @@
++daily:
+  _export:
+    OUTPUT_DATASET_NAME: xxx
+
+  +task1:
+    _export:
+      INPUT_TABLE_NAME: xxx
+      OUTPUT_TABLE_NAME: xxx
+
+    +embulk:
+      sh>: embulk run project1_conf1.yml.liquid
+
+  +task2:
+    _export:
+      INPUT_TABLE_NAME: xxx
+      OUTPUT_TABLE_NAME: xxx
+
+    +embulk:
+      sh>: embulk run project1_conf2.yml.liquid
